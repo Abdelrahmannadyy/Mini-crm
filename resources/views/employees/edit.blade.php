@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Employees - Edit ({{ $employee->first_name }})</div>
+                    <div class="card-header">Employees - Edit ({{ $employee->firstname }})</div>
 
                     <div class="card-body">
                         @if($errors->any())
@@ -24,13 +24,13 @@
                                 <div class="col-md-4">
                                     <div class="form-group form-group-default">
                                         <label>First name</label>
-                                        <input class="form-control" name="first_name" value="{{ old('first_name', $employee->first_name) }}">
+                                        <input class="form-control" name="firstname" value="{{ old('firstname', $employee->firstname) }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group form-group-default">
                                         <label>Last name</label>
-                                        <input class="form-control" name="last_name" value="{{ old('last_name', $employee->last_name) }}">
+                                        <input class="form-control" name="lastname" value="{{ old('lastname', $employee->lastname) }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -44,7 +44,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group form-group-default">
                                         <label>Phone</label>
-                                        <input class="form-control" name="phone" value="{{ $employee->phone }}">
+                                        <input class="form-control" name="phonenumber" value="{{ $employee->phonenumber }}">
                                     </div>
                                 </div>
                                 <div class="col-md-8">

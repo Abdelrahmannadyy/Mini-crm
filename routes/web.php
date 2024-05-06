@@ -20,8 +20,4 @@ Route::resource('employees', EmployeeController::class);
 
 
 
-Route::get('/home', function () {
-    return view('home.home');
-})->middleware(['auth', 'verified'])->name('home');
-
 require __DIR__.'/auth.php';

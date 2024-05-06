@@ -5,20 +5,20 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Employees - View ({{ $employee->first_name }})</div>
+                    <div class="card-header">Employees - View ({{ $employee->firstname }})</div>
 
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group form-group-default">
                                     <label>First name</label>
-                                    <input class="form-control" disabled value="{{ $employee->first_name }}">
+                                    <input class="form-control" disabled value="{{ $employee->firstname }}">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group form-group-default">
                                     <label>Last name</label>
-                                    <input class="form-control" disabled value="{{ $employee->last_name }}">
+                                    <input class="form-control" disabled value="{{ $employee->lastname }}">
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -32,7 +32,7 @@
                             <div class="col-md-4">
                                 <div class="form-group form-group-default">
                                     <label>Phone</label>
-                                    <input class="form-control" disabled value="{{ $employee->phone }}">
+                                    <input class="form-control" disabled value="{{ $employee->phonenumber }}">
                                 </div>
                             </div>
                             <div class="col-md-8">

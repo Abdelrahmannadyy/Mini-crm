@@ -16,20 +16,20 @@
                             </div>
                         @endif
 
-                        <form method="POST" action="{{ route('employees.store') }}">
+                        <form method="POST" action="{{ route('employees.store') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group form-group-default">
                                         <label>First name</label>
-                                        <input class="form-control" name="first_name" value="{{ old('first_name') }}">
+                                        <input class="form-control" name="firstname" value="{{ old('firstname') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group form-group-default">
                                         <label>Last name</label>
-                                        <input class="form-control" name="last_name" value="{{ old('last_name') }}">
+                                        <input class="form-control" name="lastname" value="{{ old('lastname') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -43,7 +43,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group form-group-default">
                                         <label>Phone</label>
-                                        <input class="form-control" name="phone" value="{{ old('phone') }}">
+                                        <input class="form-control" name="phonenumber" value="{{ old('phonenumber') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-8">

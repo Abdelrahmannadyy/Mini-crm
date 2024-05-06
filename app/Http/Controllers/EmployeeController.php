@@ -41,10 +41,16 @@ public function create()
             'email' => 'required|email|unique:employees',
             'phonenumber' => 'required|string|max:20|unique:employees',
             'company_id' => 'required|exists:companies,id',
-            // Add validation for other fields
         ]);
 
-        Employee::create($request->all());
+        $employee = new Employee();
+        $employee->firstname = $request->input('firstname');
+        $employee->lastname = $request->input('lastname');
+        $employee->email = $request->input('email');
+        $employee->phonenumber = $request->input('phonenumber');
+        $employee->company_id = $request->input('company_id');
+        $employee->save();
+
         return redirect()->route('employees.index')->with('success', 'Employee created successfully');
     }
 
@@ -52,15 +58,10 @@ public function create()
     {
         return view('employees.show', compact('employee'));
     }
-
-    /* public function edit(Employee $employee)
+    public function edit(Employee $employee)
     {
-        return view('employees.edit', compact('employee','companies'));
-    } */
-    public function edit($id)
-    {
-        $employee = Employee::find($id);
-        $companies = Company::all(); // Assuming you want to fetch all companies
+        $employee = Employee::findOrFail($employee);
+        $companies = Company::all();
 
         return view('employees.edit', compact('employee', 'companies'));
     }
@@ -73,10 +74,15 @@ public function create()
             'email' => 'required|email|unique:employees,email,'.$employee->id,
             'phonenumber' => 'required|string|max:20|unique:employees,phonenumber,'.$employee->id,
             'company_id' => 'required|exists:companies,id',
-            // Add validation for other fields
         ]);
 
-        $employee->update($request->all());
+        $employee->firstname = $request->input('firstname');
+        $employee->lastname = $request->input('lastname');
+        $employee->email = $request->input('email');
+        $employee->phonenumber = $request->input('phonenumber');
+        $employee->company_id = $request->input('company_id');
+        $employee->save();
+
         return redirect()->route('employees.index')->with('success', 'Employee updated successfully');
     }
 
