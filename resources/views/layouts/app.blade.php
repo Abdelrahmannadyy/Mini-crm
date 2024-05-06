@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        <title>@yield('title')</title>
+        <title>@yield('easwaaqMiniCRM')</title>
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -19,7 +19,7 @@
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+        <link href="{{ asset('css/cover.css') }}" rel="stylesheet">
         <!-- Styles -->
         <style>
             #navbarSupportedContent {
@@ -27,8 +27,8 @@
                 justify-content: space-between;
             }
         </style>
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    </head>
+
+</head>
     <body>
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
