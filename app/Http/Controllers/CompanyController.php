@@ -11,8 +11,7 @@ class CompanyController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        $companies = Company::all();
+    {        $companies = Company::paginate(10);
         return view('companies.index', compact('companies'));
     }
 

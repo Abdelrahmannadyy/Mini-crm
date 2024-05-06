@@ -35,7 +35,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
                                     @forelse($employees as $employee)
                                         <tr>
                                             <td class="text-center">{{ $employee->id }}</td>
@@ -72,18 +71,7 @@
                                                 @endif
                                             @endif
 
-                                          {{--   <!-- Display up to three pages before the current page -->
-                                            @for ($i = max(1, $employees->currentPage() - 3); $i < $employees->currentPage(); $i++)
-                                                <li class="page-item"><a class="page-link" href="{{ $employees->url($i) }}">{{ $i }}</a></li>
-                                            @endfor --}}
-
-                                            <!-- Current page -->
                                             <li class="page-item active"><span class="page-link">{{ $employees->currentPage() }}</span></li>
-
-                                            {{-- <!-- Display up to three pages after the current page -->
-                                            @for ($i = $employees->currentPage() + 1; $i <= min($employees->lastPage(), $employees->currentPage() + 3); $i++)
-                                                <li class="page-item"><a class="page-link" href="{{ $employees->url($i) }}">{{ $i }}</a></li>
-                                            @endfor --}}
 
                                             @if ($employees->currentPage() < $employees->lastPage())
                                                 @if ($employees->currentPage() < $employees->lastPage() - 1)
@@ -104,12 +92,6 @@
                             </table>
 
                             <div class="float-right">
-                              {{--   @if($employees->total() <= 10)
-                                    @include('components.no-pagination')
-                                @else
-                                    {{ $employees->links() }}
-                                @endif --}}
-                                {{-- {{$employees}} --}}
                             </div>
                         </div>
                     </div>

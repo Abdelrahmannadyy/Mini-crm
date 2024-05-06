@@ -33,8 +33,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
-
                                     @forelse($companies as $company)
                                         <tr>
                                             <td class="text-center">{{ $company->id }}</td>
@@ -56,17 +54,36 @@
                                             <td colspan="5" class="text-center">Oops! Nothing to show.</td>
                                         </tr>
                                     @endforelse
+
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination">
+                                            <li class="page-item {{ $companies->previousPageUrl() ? '' : 'disabled' }}">
+                                                <a class="page-link" href="{{ $companies->previousPageUrl() }}">Previous</a>
+                                            </li>
+
+                                            @if ($companies->currentPage() > 1)
+                                                <li class="page-item"><a class="page-link" href="{{ $companies->url(1) }}">1</a></li>
+                                                @if ($companies->currentPage() > 2)
+                                                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                                                @endif
+                                            @endif
+
+                                            <!-- Current page -->
+                                            <li class="page-item active"><span class="page-link">{{ $companies->currentPage() }}</span></li>
+                                            @if ($companies->currentPage() < $companies->lastPage())
+                                                @if ($companies->currentPage() < $companies->lastPage() - 1)
+                                                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                                                @endif
+                                                <li class="page-item"><a class="page-link" href="{{ $companies->url($companies->lastPage()) }}">{{ $companies->lastPage() }}</a></li>
+                                            @endif
+
+                                            <li class="page-item {{ $companies->nextPageUrl() ? '' : 'disabled' }}">
+                                                <a class="page-link" href="{{ $companies->nextPageUrl() }}">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
                                 </tbody>
                             </table>
-
-                            <div class="float-right">
-                              {{--   @if($companies->total() <= 10)
-                                    @include('components.no-pagination')
-                                @else
-                                    {{ $companies->links() }}
-                                @endif --}}
-                               {{--  {{$companies}} --}}
-                            </div>
                         </div>
                     </div>
                 </div>
